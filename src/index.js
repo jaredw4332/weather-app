@@ -3,7 +3,7 @@ import './style.css';
 const getWeather = async () => {
     try {
         let city = getSearch()
-        if (city == '') { city = 'Manila' }
+        if (city == '') { city = 'Saarland' }
         const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=435784523dbad895916dd547dcc4f17f`, {mode: 'cors'})
         const weatherData = await response.json()
         if (weatherData.cod == '404') {
@@ -88,6 +88,8 @@ const switchTemp = () => {
 
 tempSwitch.addEventListener("click", switchTemp)
 
+
+// needs to set second word as title also
 const titleString = (string) => {
     string = string.toLowerCase()
     string = string.split('')
@@ -100,10 +102,22 @@ const titleString = (string) => {
 // convert to number and run it through tempConvertK with an f
 
 const displayWeather = (temp, tempDesc, tempIcon, cityName) => {
+    weatherBox.replaceChildren()
     displayThing('cityName', 'p', cityName, 0, weatherBox)
     displayThing('tempInfo', 'h1', temp, 'degrees', weatherBox)
     displayThing('tempDesc', 'p', tempDesc, 0, weatherBox)
     displayThing(tempIcon, 'div', 0, 'icon', weatherBox)
+    setContentBackGround(tempIcon)
+}
+
+const setContentBackGround = (id) => {
+    if (content.classList.contains(`${id}background`)) {
+        return
+    }
+    else {
+        content.removeAttribute('class')
+        content.classList.add(`${id}background`)
+    }
 }
 
 //change background image of content based on icon returned
