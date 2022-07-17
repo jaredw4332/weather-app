@@ -120,40 +120,86 @@ table {
 
 [class='01dbackground'] {
     background-image: url('media/cleardbackground.jpg');
+    background-size: cover;
 }
 
 [id='01n'] {
     background-image: url("media/clearn.svg");
 }
 
+[class='01nbackground'] {
+    background-image: url('media/clearnbackground.jpg');
+    background-size: cover;
+}
+
 [id='02d'] {
     background-image: url("media/cloudd.svg");
+}
+
+[class='02dbackground'] {
+    background-image: url('media/clouddbackground.jpg');
+    background-size: cover;
 }
 
 [id='02n'] {
     background-image: url("media/cloudn.svg");
 }
 
+[class='02nbackground'] {
+    background-image: url('media/cloudnbackground.jpg');
+    background-size: cover;
+}
+
 [id='03d'], [id='03n'], [id='04d'], [id='04n'] {
     background-image: url("media/cloudy.svg");
+}
+
+[class='03dbackground'], [class='03nbackground'], [class='04dbackground'], [class='04nbackground'] {
+    background-image: url("media/cloudybackground.jpg");
+    background-size: cover;
 }
 
 [id='09d'], [id='09n'] {
     background-image: url("media/rainstorm.svg");
 }
 
+[class='09d'], [class='09n'] {
+    background-image: url("media/rainstormbackground.jpg");
+    background-size: cover;
+}
+
 [id='10d'], [id='10n'] {
     background-image: url("media/rain.svg");
+}
+
+[class='10d'], [class='10n'] {
+    background-image: url("media/rainbackground.jpg");
+    background-size: cover;
 }
 
 [id='11d'], [id='11n'] {
     background-image: url("media/storm.svg");
 }
 
+[class='13d'], [class='13n'] {
+    background-image: url("media/stormbackground.jpg");
+    background-size: cover;
+}
+
 [id='13d'], [id='13n'] {
     background-image: url("media/snow.svg");
 }
 
+[class='13d'], [class='13n'] {
+    background-image: url("media/snowbackground.jpg");
+    background-size: cover;
+}
+
 [id='50d'], [id='50n'] {
     background-image: url("media/mist.svg");
+}
+
+[class='50dbackground'], [class='50nbackground'] {
+    background-image: url("media/mistbackground.jpg");
+    background-size: cover;
 }
