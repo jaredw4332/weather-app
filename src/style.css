@@ -90,12 +90,19 @@ table {
     transition: 0.2s;
 }
 
-#searchButton, #tempSwitch {
+.inputButton {
     border-radius: 10px;
     background-color: rgb(168, 193, 240, 0.5);
     border-color: transparent;
     padding: 5px;
     font-size: 16px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.inputButton:hover {
+    background-color: rgb(168, 193, 240, 0.8);
+    transform: scale(1.1);
 }
 
 #tempSwitchF {
