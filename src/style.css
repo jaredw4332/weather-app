@@ -67,7 +67,8 @@ table {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: 1fr 3fr 1fr;
-    background-color: cornflowerblue;
+    background-color: rgb(100, 149, 237, 0.2);
+    border-radius: 20px;
     padding: 20px;
 }
 
@@ -88,10 +89,12 @@ table {
 /* alt weather style */
 
 #weatherFooter {
-    background-color: rgba(12, 37, 120, 0.3);
+    background-color: rgba(12, 37, 120, 0.2);
     display: grid;
     grid-template-columns: 2fr 1fr;
     gap: 20px;
+    border-radius: 20px;
+    padding: 10px;
 }
 
 #weatherAlt {
@@ -104,6 +107,11 @@ table {
 
 .altBox {
     text-align: center;
+}
+
+#windBox {
+    display: flex;
+    gap: 10px;
 }
 
 /* icon style */
@@ -172,7 +180,8 @@ table {
     background-image: url("media/rain.svg");
 }
 
-[class='10d'], [class='10n'] {
+
+[class='10dbackground'], [class='10nbackground'] {
     background-image: url("media/rainbackground.jpg");
     background-size: cover;
 }
@@ -181,7 +190,7 @@ table {
     background-image: url("media/storm.svg");
 }
 
-[class='13d'], [class='13n'] {
+[class='11dbackground'], [class='11nbackground'] {
     background-image: url("media/stormbackground.jpg");
     background-size: cover;
 }
@@ -190,7 +199,7 @@ table {
     background-image: url("media/snow.svg");
 }
 
-[class='13d'], [class='13n'] {
+[class='13dbackground'], [class='13nbackground'] {
     background-image: url("media/snowbackground.jpg");
     background-size: cover;
 }
