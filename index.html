@@ -8,31 +8,40 @@
     <script src="main.js" defer></script>
 </head>
 <body>
-    <div id=content>
+    <div id="content" name="content">
         <div id="inputBox">
             <input type="text" name="search" id="search" placeholder="City">
             <button name="searchButton" id="searchButton">Search</button>
+            <button name="tempSwitch" id="tempSwitch">
+                <span name="tempSwitchC" id="tempSwitchC" class="tempSwitchSetting">
+                    C
+                </span>
+                 | 
+                <span name="tempSwitchF" id="tempSwitchF" class="tempSwitchSetting">
+                    F
+                </span>
+            </button>
         </div>
 
         <div id="weatherBox" name="weatherBox"></div>
 
         <div id="weatherFooter">
-            <div id="weatherAlt">
+            <div id="weatherAlt" name="weatherAlt">
                 <div id="feelsLike" name="feelsLike" class="altBox">
                     Feels Like
                 </div>
                 <div id="minTemp" name="minTemp" class="altBox">
-                    Low
+                    Min Temp
                 </div>
                 <div id="maxTemp" name="maxTemp" class="altBox">
-                    High
+                    Max Temp
                 </div>
                 <div id="humidityBox" name="humidityBox" class="altBox">
                     Humidity
                 </div>
             </div>
 
-            <div id="windBox">
+            <div id="windBox" name="windBox">
                 <div id="windSpeedBox" name="windSpeedBox" class="altBox">
                     Wind Speed
                 </div>
