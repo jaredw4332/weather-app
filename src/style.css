@@ -70,6 +70,12 @@ table {
 
 /* search bar and buttons */
 
+#inputBox {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
 #search {
     border-radius: 20px;
     border-color: transparent;
@@ -98,6 +104,23 @@ table {
 
 .tempSwitchSetting {
     transition: 0.5s;
+}
+
+#githubLink {
+    background-position: center;
+    background-image: url('media/githubicon.svg');
+    background-repeat: no-repeat;
+    background-color: transparent;
+    border-color: transparent;
+    height: 28px;
+    width: 28px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+#githubLink:hover {
+    filter: invert(100%);
+    transform: scale(1.3);
 }
 
 /* main weather style */
