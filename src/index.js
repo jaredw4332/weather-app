@@ -3,7 +3,7 @@ import './style.css';
 const getWeather = async () => {
     try {
         let city = getSearch()
-        if (city == '') { city = 'Saarland' }
+        if (city == '') { city = 'Regina' }
         const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=435784523dbad895916dd547dcc4f17f`, {mode: 'cors'})
         const weatherData = await response.json()
         if (weatherData.cod == '404') {
@@ -88,18 +88,15 @@ const switchTemp = () => {
 
 tempSwitch.addEventListener("click", switchTemp)
 
-
-// needs to set second word as title also
 const titleString = (string) => {
     string = string.toLowerCase()
-    string = string.split('')
-    string[0] = string[0].toUpperCase()
-    string = string.join('')
-    return string
+    string = string.split(' ')
+    string = string.map(function(word) {
+        return (word.charAt(0).toUpperCase() + word.slice(1))
+    })
+    return string.join(' ')
 }
 
-// celcius to fahrenheit swap button to grab degree class, cut off last 2 characters,
-// convert to number and run it through tempConvertK with an f
 
 const displayWeather = (temp, tempDesc, tempIcon, cityName) => {
     weatherBox.replaceChildren()
@@ -108,6 +105,7 @@ const displayWeather = (temp, tempDesc, tempIcon, cityName) => {
     displayThing('tempDesc', 'p', tempDesc, 0, weatherBox)
     displayThing(tempIcon, 'div', 0, 'icon', weatherBox)
     setContentBackGround(tempIcon)
+    console.log(tempIcon)
 }
 
 const setContentBackGround = (id) => {
