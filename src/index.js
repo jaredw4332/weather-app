@@ -3,18 +3,18 @@ import './style.css';
 const getWeather = async () => {
     try {
         let city = getSearch()
-        if (city == '') { city = 'Regina' }
+        if (city == '') { city = 'Valetta' }
         const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=435784523dbad895916dd547dcc4f17f`, {mode: 'cors'})
         const weatherData = await response.json()
         if (weatherData.cod == '404') {
-            throw 'Not a valid city'
+            throw "We couldn't find that city. Try again?"
         } else {
             displayHandler(weatherData, city)
         }
     }
 
     catch(error) {
-        console.log(error)
+        alert(error)
     }
 }
 
@@ -35,6 +35,7 @@ const displayHandler = (weather, cityName) => {
 
 const getSearch = () => {
     let city = search.value
+    search.value = ''
     city.split('').forEach(letter => {
         if (letter === " ") {
           letter = "+"
@@ -69,6 +70,16 @@ const tempConvertCF = (num, current) => {
     }
 }
 
+const switchTempStyle = (current) => {
+    if (current == "F") {
+        tempSwitchF.style.filter = "opacity(0.15)"
+        tempSwitchC.style.filter = "opacity(1)"
+    } else if (current == "C") {
+        tempSwitchC.style.filter = "opacity(0.15)"
+        tempSwitchF.style.filter = "opacity(1)"
+    }
+}
+
 const switchTemp = () => {
     const tempCollection = document.getElementsByClassName('degrees')
     for (let item in tempCollection) {
@@ -81,6 +92,7 @@ const switchTemp = () => {
         num = num.slice(0, -2)
         num = Number(num)
         num = tempConvertCF(num, temp)
+        switchTempStyle(temp)
 
         tempCollection[item].textContent = num
     }
@@ -97,7 +109,6 @@ const titleString = (string) => {
     return string.join(' ')
 }
 
-
 const displayWeather = (temp, tempDesc, tempIcon, cityName) => {
     weatherBox.replaceChildren()
     displayThing('cityName', 'p', cityName, 0, weatherBox)
@@ -105,7 +116,6 @@ const displayWeather = (temp, tempDesc, tempIcon, cityName) => {
     displayThing('tempDesc', 'p', tempDesc, 0, weatherBox)
     displayThing(tempIcon, 'div', 0, 'icon', weatherBox)
     setContentBackGround(tempIcon)
-    console.log(tempIcon)
 }
 
 const setContentBackGround = (id) => {
@@ -117,8 +127,6 @@ const setContentBackGround = (id) => {
         content.classList.add(`${id}background`)
     }
 }
-
-//change background image of content based on icon returned
 
 const displayAltWeather = (tempFeel, tempLow, tempHigh, humidity) => {
     displayThing('tempFeel', 'p', tempFeel, 'degrees', feelsLike)
