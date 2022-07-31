@@ -49,6 +49,15 @@ table {
 
 /* page style begins */
 
+@font-face {
+    font-family: 'Roboto Condensed';
+    src: url('media/RobotoCondensed-Regular.ttf');
+}
+
+* {
+    font-family: 'Roboto Condensed';
+}
+
 #content {
    display: grid;
    grid-template-rows: 1fr 3fr 2fr; 
@@ -56,6 +65,39 @@ table {
    align-items: center;
    height: 100vh;
    min-height: 100%;
+   font-family: 'Roboto Condensed';
+}
+
+/* search bar and buttons */
+
+#search {
+    border-radius: 20px;
+    border-color: transparent;
+    padding: 5px;
+    font-size: 16px;
+}
+
+#search:focus {
+    outline: none;
+    border-color: rgb(100, 149, 237);
+    box-shadow: 0 0 10px rgb(100, 149, 237);
+    transition: 0.2s;
+}
+
+#searchButton, #tempSwitch {
+    border-radius: 10px;
+    background-color: rgb(168, 193, 240, 0.5);
+    border-color: transparent;
+    padding: 5px;
+    font-size: 16px;
+}
+
+#tempSwitchF {
+    filter: opacity(0.15);
+}
+
+.tempSwitchSetting {
+    transition: 0.5s;
 }
 
 /* main weather style */
@@ -84,17 +126,19 @@ table {
 
 #tempDesc {
     grid-area: 3 / 1 / 4 / 3;
+    font-size: 18px;
 }
 
 /* alt weather style */
 
 #weatherFooter {
-    background-color: rgba(12, 37, 120, 0.2);
+    background-color: rgba(76, 105, 201, 0.2);
     display: grid;
     grid-template-columns: 2fr 1fr;
     gap: 20px;
     border-radius: 20px;
     padding: 10px;
+    font-size: 18px;
 }
 
 #weatherAlt {
@@ -110,8 +154,8 @@ table {
 }
 
 #windBox {
-    display: flex;
-    gap: 10px;
+    display: grid;
+    gap: 6px;
 }
 
 /* icon style */
@@ -171,7 +215,7 @@ table {
     background-image: url("media/rainstorm.svg");
 }
 
-[class='09d'], [class='09n'] {
+[class='09dbackground'], [class='09nbackground'] {
     background-image: url("media/rainstormbackground.jpg");
     background-size: cover;
 }
